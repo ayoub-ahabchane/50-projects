@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+:root {
+  --clr-accent-primary: #3498db;
+  --clr-accent-secondary: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+button {
+  font-family: inherit;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress {
+  background-color: var(--clr-accent-primary);
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  transform: translateY(-50%);
+  transition: 0.3s ease-in-out;
+}
+
+.progress-container::before {
+  content: "";
+  background-color: var(--clr-accent-secondary);
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  border-color: var(--clr-accent-secondary);
+  transition: border-color 0.2s ease-out 0.2s;
+}
+
+.circle.active {
+  border-color: var(--clr-accent-primary);
+}
+
+.btn {
+  background-color: var(--clr-accent-primary);
+  border: unset;
+  border-radius: 6px;
+  padding: 0.5em 2em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 5px;
+  transition: all 0.1s ease-out;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:focus {
+  outline: unset;
+}
+
+.btn:disabled {
+  background-color: var(--clr-accent-secondary);
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn:disabled:active {
+  transform: scale(1);
+}
